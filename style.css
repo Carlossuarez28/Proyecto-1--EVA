@@ -72,7 +72,8 @@ form{
   background:#0b1220;
   padding:16px;
   border-radius:12px;
-  display:grid; gap:10px;
+  display:grid; 
+  gap:10px;
 }
 
 input,select,textarea{
@@ -95,5 +96,15 @@ form:has(:invalid){
 form:not(:has(:invalid)){
     border-left:6px solid var(--good)
 }
+
+.div-imagenes{
+  background:#0b1220;
+  padding:16px;
+  border-radius:12px;
+  display:grid; 
+  gap:10px;
+  border-left:6px solid var(--bad);
+}
+
 
 
