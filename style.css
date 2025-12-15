@@ -1,3 +1,4 @@
+/*Lo usamos para poder llamar a estos colores mas abajo cuando lo necesitemos*/
 :root{
   --bg:#0f1724;
   --card:#0b1220;
@@ -10,6 +11,7 @@
   color-scheme: dark;
 }
 
+/*Lo he usado para crear el header de la pagina de soporte con una imagen*/
 .header-soporte {
 text-align: center;
 align-content: center;
@@ -19,92 +21,278 @@ background-image: url(Imagenes/Imagensoportetecnico.png);
 background-size: cover;
 }
 
-body{
-margin:0;
-font-family:system-ui, Arial;
-background:var(--bg);
-color:#e6eef6;
-}
+/*Lo he usado para crear el header de la web*/
 .header-web{
 background:#081020;
 display:flex;
 align-items:center;
-justify-content:space-between;
 padding:15px 25px;
+position: relative;
 }
 
+/*Lo usamos para darle altura al logo*/
+.header-web .logo {
+  height: 150px;
+}
+
+/*Lo usamos para dejar el texto centrado*/
+.header-web h1 {
+  margin: 0;
+  text-align: center;
+  flex: 1; /* ocupa el espacio restante */
+}
+
+body{
+margin:0;       /*elimina los márgenes por defecto del navegador,para que los elementos ocupen todo el espacio disponible.*/                         
+padding: 0;     /*elimina los padding por defecto del navegador,para que los elementos ocupen todo el espacio disponible.*/
+width: 100%;    /*asegura que el <body> ocupe todo el ancho de la pantalla.*/
+font-family:system-ui, Arial;
+background:var(--bg);
+color:#e6eef6;
+}
+
+main{
+padding:0; /*No tiene espacios*/
+max-width:100%; /*Ancho maximo que ocupa*/
+}
+
+/*Lo usamos para crear el pie de la pagina*/
 footer{
 background:var(--azul);
 padding:15px 25px;
 text-align:center;
-color:var(--muted)
+color:var(--muted);
 }
 
+/*Define fondo azul para el menú de navegación y padding interno para separar los enlaces de los bordes.*/
 .nav-menu{
-    background-color: var(--azul);
-    padding:8px 12px;
+background-color: var(--azul);
+padding:8px 12px;
 }
 
 nav a{
 color:var(--accent); 
 margin:0 8px; 
-text-decoration:none; 
+text-decoration:none; /*sin subrayado*/
 padding:8px 12px;
 border-radius:8px;
 }
 
+/*Al pasar el cursor por encima cambia el fondo de los enlaces y y se hace un poco mas grande*/
 nav a:hover{
-background:
-#0a1a2a; 
-transform:translateY(-2px)
+background:#0a1a2a; 
+transform:translateY(-2px);
 }
 
+/*Cambia el fondo a otro color al hacer click en el enlace*/
 nav a:active{
-background:#04101a
+background:#04101a;
 }
 
-main{
-padding:20px;
-max-width:1200px;
-}
-
+/*Contenedor del formulario*/
 form{
-  background:#0b1220;
-  padding:16px;
-  border-radius:12px;
-  display:grid; 
-  gap:10px;
+background:#0b1220;
+padding:16px;
+border-radius:12px;
+display:grid; 
+gap:10px;
 }
 
+/*Aplicamos un espacio interno (padding) y bordes redondeados a todos los campos de formulario.*/
 input,select,textarea{
-  padding:8px;
-  border-radius:8px;
+padding:8px;
+border-radius:8px;
 }
 
+/*El borde se poner de color verde si el campo esta bien rellenado*/
 input:valid,textarea:valid{
-    border:2px solid var(--good)
+border:2px solid var(--good);
 }
 
+/*El borde se poner de color rojo si el campo esta mal rellenado*/
 input:invalid,textarea:invalid{
-    border:2px solid var(--bad)
+border:2px solid var(--bad);
 }
 
+/*Si algun campo del formulario es invalido el borde se pone en rojo*/
 form:has(:invalid){
-    border-left:6px solid var(--bad)
+border-left:6px solid var(--bad);
 }
 
+/*Si el formulario es valido el borde se pone en verde*/
 form:not(:has(:invalid)){
-    border-left:6px solid var(--good)
+border-left:6px solid var(--good);
 }
 
+/*Cambia el fondo y tamaño al color verde al pasar el cursor sobre el botone de enviar.*/
+input[type="submit"]:hover {
+background-color: var(--good);
+transform: scale(1.05);
+}
+
+/*Cambia el fondo y tamaño al color rojo al pasar el cursor sobre el boton de resetear.*/
+input[type="reset"]:hover {
+background-color: var(--bad);
+transform: scale(1.05);
+}
+
+/*Contenedor de la tabla*/
+table{
+width:100%;
+border-collapse:separate;
+border-spacing:0 8px;
+background:#0b1220;
+padding:15px;
+border-radius:12px;
+border-left:6px solid var(--bad);
+margin-top: 20px;
+}
+
+/*Aplicamos estilo solo a las celdas del encabezado*/
+thead th{
+color:var(--muted);
+text-align:left;
+}
+
+/*Aplicamos un fondo a cada celda y espacio*/
+tbody td{
+background:#0b1220;
+padding:10px;
+}
+
+/*Aplicamos solo un fondo a las filas pares*/
+tbody tr:nth-child(even) td{
+background:#020d18;
+}
+
+/*Alineamos el contenido de la ultima columna a la derecha*/
+thead th:last-child, tbody td:last-child{
+text-align: right;
+}
+
+/*Contenedor de todas las tarjetas*/
+.grid{
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+background:#0b1220;
+padding:16px;
+border-radius:12px;
+display:grid; 
+gap:10px;
+border-left:6px solid var(--bad);
+width: 100%;
+max-width: 100%;
+box-sizing: border-box;
+}
+
+/*Lo usamos para hacer las tarjetas*/
+.card{
+background:#0b1220;
+border-radius:12px;
+padding:12px;
+transition:.2s;
+outline:3px solid rgba(0,180,216,0.3);
+}
+
+/*Lo usamos para agrandar las tarjetas al pasar el cursor por encima*/
+.card:hover{
+transform:scale(1.03);
+}
+
+/*Lo usamos para crear el contenedor donde pondremos la imagen en las tarjetas destacadas o en el caso de las 
+otras tarjetas un recuadro de color azulado con el nombre del producto*/
+.thumb{
+height:120px;
+background:linear-gradient(90deg,var(--accent),var(--accent-2));
+border-radius:8px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#001219;
+font-weight:bold;
+overflow: hidden;
+}
+
+/*Con esto conseguimos que la imagen quede centrada dentro del recuadro azulito de las tarjetas*/
+.thumb img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/*Lo usamos para resaltar solo las tarjetas que tienen una imagen*/
+.card:has(.thumb img){
+outline: 3px solid #00e5ff;
+box-shadow: 0 0 30px rgba(0,229,255,.45);
+}
+
+/*Hover más potente solo en tarjetas que el producto es el destacado*/
+.card:has(.thumb img):hover{
+transform: scale(1.06);
+}
+
+/*Contenedor para los enlaces a las paginas web oficiales*/
+.nav-enlace{
+background:#0b1220;
+padding:16px;
+border-radius:12px;
+display:grid; 
+gap:10px;
+border-left:6px solid var(--bad);
+margin-bottom: 20px;
+}
+
+/*Contenedor para las imagenes de las paginas de los productos destacados*/
+.div-destacado{
+background:#0b1220;
+padding:16px;
+border-radius:12px;
+display: flex; 
+flex-wrap: wrap;
+column-gap: 20px;
+row-gap: 20px;
+border-left:6px solid var(--bad);
+margin-bottom: 20px;
+}
+
+/*Contenedor para los videos de las paginas destacadas*/
+.div-video{
+background:#0b1220;
+padding:16px;
+border-radius:12px;
+display:grid; 
+gap:10px;
+border-left:6px solid var(--bad);
+margin-bottom: 20px;
+}
+
+/*Contenedor para las caracteristicas*/
+.div-caracteristicas{
+background:#0b1220;
+padding:16px;
+border-radius:12px;
+display:grid; 
+gap:10px;
+border-left:6px solid var(--bad);
+margin-top: 20px;
+}
+
+/*Contenedor para la descripcion del producto*/
+.div-producto{
+background:#0b1220;
+padding:16px;
+border-radius:12px;
+display:grid; 
+gap:10px;
+border-left:6px solid var(--bad);
+}
+
+/*Contenedor de las imagenes de la pagina inicio*/
 .div-imagenes{
-  background:#0b1220;
-  padding:16px;
-  border-radius:12px;
-  display:grid; 
-  gap:10px;
-  border-left:6px solid var(--bad);
+background:#0b1220;
+padding:16px;
+border-radius:12px;
+display:flex; 
+gap:10px;
+flex-wrap: wrap;
+border-left:6px solid var(--bad);
 }
-
-
-

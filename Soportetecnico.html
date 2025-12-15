@@ -13,10 +13,11 @@
 
     <nav class="nav-menu">
         <ul>
-            <a href="index.html">Pagina principal</a>
+            <a href="index.html">Inicio</a>
             <a href="Ordenadoresycomponentes.html">Ordenadores y componentes</a>
             <a href="Destacado1.html">Destacado 1</a>
             <a href="Destacado2.html">Destacado 2</a>
+            <a href="Soportetecnico.html">Soporte tecnico</a>
         </ul>
     </nav>
 
@@ -53,13 +54,16 @@
                 <p>
                     Elige la opcion con la que tiene el problema:
                     <select name="Problema">
-                        <option value="Sobremesa">Sobremesa</option>
-                        <option value="Portatil">Portatil</option>
-                        <option value="Componentes">Componentes</option>
+                        <option value="Tarjeta grafica">Tarjeta grafica</option>
+                        <option value="Placa base">Placa base</option>
+                        <option value="Procesadores">Procesadores</option>
+                        <option value="Almacenamiento">Almacenamiento</option>
                     </select>
                 </p>
 
-                <p>Di con que componente tiene el problema<input type="text" name="Componente"/></p>
+                <p>Nombre del producto con el que tiene el problema <input type="text" name="Componente" pattern="^[A-Za-z0-9 ]+"
+                    title="AMD ryzen 9, RTX 5070 ti" required/>
+                </p>
             </ul>
         </fieldset>
 
