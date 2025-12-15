@@ -219,6 +219,24 @@ height:100%;
 object-fit:cover;
 }
 
+.defensa{
+height:120px;
+background:linear-gradient(90deg,var(--accent),var(--accent-2));
+border-radius:8px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#001219;
+font-weight:bold;
+overflow: hidden;
+}
+
+.defensa img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
 /*Lo usamos para resaltar solo las tarjetas que tienen una imagen*/
 .card:has(.thumb img){
 outline: 3px solid #00e5ff;
@@ -295,4 +313,19 @@ display:flex;
 gap:10px;
 flex-wrap: wrap;
 border-left:6px solid var(--bad);
+}
+
+.boton{
+background:#0b1220;
+padding:16px;
+border-radius:12px;
+display:flex; 
+gap:10px;
+flex-wrap: wrap;
+border-left:6px solid var(--bad);
+}
+
+.boton:hover{
+background-color: var(--good);
+transform:translateY(-2px);
 }
